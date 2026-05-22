@@ -23,26 +23,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-      - name: Set base path for GitHub Pages
-        run: echo "BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
-      - name: Build
-        run: bun run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}
-      - name: Copy index.html to 404.html for SPA fallback
-        run: cp dist/index.html dist/404.html
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
