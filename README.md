@@ -71,9 +71,36 @@ Aplicação web para calcular o lucro real de vendas no mercado do FIFA Ultimate
 | `npm run build` | Gera a build de produção |
 | `npm run preview` | Pré-visualiza a build localmente |
 
-## Deploy
+## Deploy no GitHub Pages
 
-O app está publicado e acessível publicamente via Lovable. Para atualizar o deploy, clique no botão **Publish** no editor do Lovable.
+O projeto está configurado para deploy automático no **GitHub Pages** via GitHub Actions.
+
+### Como publicar:
+
+1. **Conecte ao GitHub** (se ainda não conectou):
+   - No editor do Lovable, clique no botão **+** (Plus) no canto inferior esquerdo do chat.
+   - Selecione **GitHub** → **Connect project**.
+   - Autorize o app do Lovable e crie o repositório.
+
+2. **Ative o GitHub Pages no repositório**:
+   - Vá até o repositório criado no GitHub.
+   - Acesse **Settings** → **Pages**.
+   - Em **Build and deployment**, selecione **GitHub Actions** como a fonte.
+
+3. **Deploy automático**:
+   - A cada push na branch `main`, o workflow `.github/workflows/deploy.yml` é executado automaticamente.
+   - O app será buildado e publicado no GitHub Pages.
+   - Acesse a URL gerada: `https://<seu-usuario>.github.io/<nome-do-repo>/`
+
+### Sobre a configuração:
+
+- O workflow usa **Bun** (mesmo gerenciador do projeto) para instalar dependências e buildar.
+- O **base path** é configurado automaticamente com o nome do repositório, então os assets (ícones, manifest, CSS) carregam corretamente mesmo em subdiretórios.
+- Um arquivo `404.html` é gerado a partir do `index.html`, garantindo que o app funcione como SPA mesmo ao acessar rotas diretamente.
+
+## Deploy Lovable
+
+O app também continua publicado e acessível via Lovable. Para atualizar o deploy da Lovable, clique no botão **Publish** no editor.
 
 ## Conectando ao GitHub
 
