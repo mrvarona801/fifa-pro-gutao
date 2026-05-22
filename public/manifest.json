@@ -1,0 +1,14 @@
+{
+  "name": "Calculadora FIFA",
+  "short_name": "Calc FIFA",
+  "description": "Calcule o lucro real das suas vendas no FIFA descontando a taxa de 5% da EA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1a0f",
+  "theme_color": "#16a34a",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}
